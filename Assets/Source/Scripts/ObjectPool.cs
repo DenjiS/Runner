@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using Unity.Collections;
 using UnityEngine;
 
 public class ObjectPool : MonoBehaviour
@@ -34,10 +35,22 @@ public class ObjectPool : MonoBehaviour
         }
     }
 
-    protected bool TryGetObject(out GameObject result)
+    protected bool TryGetRandomObject(out GameObject result)
     {
-        result = _pool.FirstOrDefault(p => p.activeSelf == false);
+        List<GameObject> disabledObjects = _pool.Where(@object => @object.activeSelf == false).ToList();
 
-        return result != null;
+        if (disabledObjects.Any())
+        {
+            int objectNumber = Random.Range(0, disabledObjects.Count());
+            result = disabledObjects[objectNumber];
+
+            return true;
+        }
+        else
+        {
+            result = null;
+
+            return false;
+        }
     }
 }

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Spawner : ObjectPool
+public class EnemySpawner : ObjectPool
 {
     [SerializeField] private float _secondsBetweenSpawn;
     [SerializeField] private GameObject[] _enemyTemplates;
@@ -18,7 +18,7 @@ public class Spawner : ObjectPool
         _elapsedTime += Time.deltaTime;
 
         if (_elapsedTime > _secondsBetweenSpawn
-        && TryGetObject(out GameObject enemy))
+        && TryGetRandomObject(out GameObject enemy))
         {
             _elapsedTime = 0;
 
