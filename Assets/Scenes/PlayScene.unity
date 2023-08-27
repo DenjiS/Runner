@@ -866,7 +866,8 @@ MonoBehaviour:
   _templates:
   - {fileID: 174304949933098419, guid: 01161fae40ad5ca488da15810c3d6fcf, type: 3}
   - {fileID: 174304949933098419, guid: bf47dfc5d768607409fdcfb8ad5e337c, type: 3}
-  _secondsBetweenSpawn: 1
+  _maxSecondsBetweenSpawn: 3
+  _minSecondsBetweenSpawn: 2
 --- !u!4 &729718796
 Transform:
   m_ObjectHideFlags: 0
@@ -2047,7 +2048,8 @@ MonoBehaviour:
   - {fileID: 6961142872587365394, guid: d024ed3d22cd92b43906d29576e45e69, type: 3}
   - {fileID: 5352543546158715756, guid: e4922d5a5328c9847ae6081cf9365169, type: 3}
   - {fileID: 7112580252982952306, guid: b8c72bdf26ab0394aadbe663795e80c4, type: 3}
-  _secondsBetweenSpawn: 5
+  _maxSecondsBetweenSpawn: 7
+  _minSecondsBetweenSpawn: 4
 --- !u!1 &1671496948
 GameObject:
   m_ObjectHideFlags: 0
