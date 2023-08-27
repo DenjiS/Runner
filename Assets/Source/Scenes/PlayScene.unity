@@ -2014,7 +2014,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96eb1b7b5f1044c4d80d99f2feec0ab8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _perObjectCapacity: 10
+  _perObjectCapacity: 5
   _container: {fileID: 387086654}
   _templates:
   - {fileID: 1304348930283340457, guid: c48a39e3107290e41921e55dbe6c866b, type: 3}
