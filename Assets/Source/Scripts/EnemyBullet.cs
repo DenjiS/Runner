@@ -1,11 +1,11 @@
 using UnityEngine;
 
-public class Enemy : Pickable
+public class EnemyBullet : Pickable
 {
     [SerializeField] private int _damage;
 
     protected override void Interact(Player player)
     {
-        player.ApplyHealth(- _damage);
+        player.ApplyDamage(_damage);
     }
 }
