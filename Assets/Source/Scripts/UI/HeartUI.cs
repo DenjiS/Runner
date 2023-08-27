@@ -5,7 +5,7 @@ using UnityEngine.Events;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(Image))]
-public class Heart : MonoBehaviour
+public class HeartUI : MonoBehaviour
 {
     [SerializeField] private float _lerpDuration;
 

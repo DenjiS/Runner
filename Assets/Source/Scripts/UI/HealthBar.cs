@@ -4,9 +4,9 @@ using UnityEngine;
 public class HealthBar : MonoBehaviour
 {
     [SerializeField] private Player _player;
-    [SerializeField] private Heart _heartTemplate;
+    [SerializeField] private HeartUI _heartTemplate;
 
-    private List<Heart> _hearts = new();
+    private List<HeartUI> _hearts = new();
 
     private void OnEnable()
     {
@@ -42,12 +42,12 @@ public class HealthBar : MonoBehaviour
 
     private void CreateHeart()
     {
-        Heart newHeart = Instantiate(_heartTemplate, transform);
-        _hearts.Add(newHeart.GetComponent<Heart>());
+        HeartUI newHeart = Instantiate(_heartTemplate, transform);
+        _hearts.Add(newHeart.GetComponent<HeartUI>());
         newHeart.StartFill();
     }
 
-    private void DestroyHeart(Heart heart)
+    private void DestroyHeart(HeartUI heart)
     {
         _hearts.Remove(heart);
         heart.StartDestroy();

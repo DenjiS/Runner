@@ -1,22 +1,11 @@
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class Enemy : Pickable
 {
     [SerializeField] private int _damage;
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    protected override void Interact(Player player)
     {
-
-        if (collision.TryGetComponent(out Player player))
-        {
-            player.ApplyDamage(_damage);
-        }
-
-        Die();
-    }
-
-    private void Die()
-    {
-        gameObject.SetActive(false);
+        player.ApplyDamage(_damage);
     }
 }
