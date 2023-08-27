@@ -4,7 +4,6 @@ public abstract class Pickable : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
-
         if (collision.TryGetComponent(out Player player))
         {
             Interact(player);
@@ -14,7 +13,6 @@ public abstract class Pickable : MonoBehaviour
         {
             gameObject.SetActive(false);
         }
-
     }
 
     protected abstract void Interact(Player player);
