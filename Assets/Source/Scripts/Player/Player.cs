@@ -13,9 +13,9 @@ public class Player : MonoBehaviour
         HealthChanged?.Invoke(_health);
     }
 
-    public void ApplyDamage(int damage)
+    public void ApplyHealth(int health)
     {
-        _health -= damage;
+        _health += health;
         HealthChanged?.Invoke(_health);
 
         if (_health <= 0)

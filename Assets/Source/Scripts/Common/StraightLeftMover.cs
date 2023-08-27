@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class StraightMover : MonoBehaviour
+public class StraightLeftMover : MonoBehaviour
 {
     [SerializeField] private float _speed;
     

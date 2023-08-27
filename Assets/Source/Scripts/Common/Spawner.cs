@@ -3,8 +3,9 @@ using UnityEngine;
 public class Spawner : ObjectPool
 {
     [SerializeField] private GameObject[] _templates;
-    [SerializeField] private float _maxSecondsBetweenSpawn;
+
     [SerializeField][Min(0)] private float _minSecondsBetweenSpawn;
+    [SerializeField] private float _maxSecondsBetweenSpawn;
 
     private SpawnPoint[] _spawnPoints;
     private float _secondsBetweenSpawn;

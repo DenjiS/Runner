@@ -6,6 +6,6 @@ public class Enemy : Pickable
 
     protected override void Interact(Player player)
     {
-        player.ApplyDamage(_damage);
+        player.ApplyHealth(- _damage);
     }
 }
