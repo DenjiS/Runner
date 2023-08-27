@@ -2021,7 +2021,7 @@ MonoBehaviour:
   _minSecondsBetweenSpawn: 2
   _maxSecondsBetweenSpawn: 2
   _spawnPoint: {fileID: 1731026667}
-  _blasterSound: {fileID: 1952497230}
+  _shotSound: {fileID: 1952497230}
 --- !u!4 &1952497229
 Transform:
   m_ObjectHideFlags: 0
@@ -2293,6 +2293,10 @@ PrefabInstance:
     - target: {fileID: 1013441423108452680, guid: 2a63ae71230f33f44860988f1bf8aa87, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 6792647590308138771, guid: 2a63ae71230f33f44860988f1bf8aa87, type: 3}
+      propertyPath: _health
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8679298704984716791, guid: 2a63ae71230f33f44860988f1bf8aa87, type: 3}
       propertyPath: m_Name
