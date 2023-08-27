@@ -1,16 +1,20 @@
 using UnityEngine;
 
-public class EnemySpawner : ObjectPool
+public class Spawner : ObjectPool
 {
-    [SerializeField] private float _secondsBetweenSpawn;
-    [SerializeField] private GameObject[] _enemyTemplates;
-    [SerializeField] private Transform[] _spawnPoints;
+    [SerializeField] private GameObject[] _templates;
+    [SerializeField] private float _maxSecondsBetweenSpawn;
+    [SerializeField] private float _minSecondsBetweenSpawn;
 
+    private SpawnPoint[] _spawnPoints;
+    private float _secondsBetweenSpawn;
     private float _elapsedTime = 0;
 
     private void Start()
     {
-        Initialize(_enemyTemplates);
+        Initialize(_templates);
+
+        _spawnPoints = GetComponentsInChildren<SpawnPoint>();
     }
 
     private void Update()
@@ -23,7 +27,7 @@ public class EnemySpawner : ObjectPool
             _elapsedTime = 0;
 
             int spawnPointNumber = Random.Range(0, _spawnPoints.Length);
-            SetEnemy(enemy, _spawnPoints[spawnPointNumber].position);
+            SetEnemy(enemy, _spawnPoints[spawnPointNumber].transform.position);
         }
     }
 

@@ -1,8 +1,8 @@
 using UnityEngine;
 
-public class EnemyMover : MonoBehaviour
+public class StraightMover : MonoBehaviour
 {
-    [SerializeField] private int _speed;
+    [SerializeField] private float _speed;
     
     private void Update()
     {
