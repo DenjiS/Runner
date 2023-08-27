@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [RequireComponent(typeof(AudioSource))]
-public class BulletSpawner : Spawner
+public class PlayerBulletSpawner : Spawner
 {
     [SerializeField] private SpawnPoint _spawnPoint;
     [SerializeField] private AudioSource _shotSound;
