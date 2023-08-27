@@ -143,7 +143,7 @@ GameObject:
   - component: {fileID: 7611437783752122189}
   - component: {fileID: 7803836651285925561}
   m_Layer: 0
-  m_Name: DefaultSpawner
+  m_Name: DefaultAreaSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 419385456094870383, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0

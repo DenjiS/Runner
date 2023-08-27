@@ -35,20 +35,25 @@ public class Spawner : ObjectPool
         _elapsedTime += Time.deltaTime;
 
         if (_elapsedTime > _secondsBetweenSpawn
-        && TryGetRandomObject(out GameObject enemy))
+        && TryGetRandomObject(out GameObject @object))
         {
             _elapsedTime = 0;
             _secondsBetweenSpawn = Random.Range(_minSecondsBetweenSpawn, _maxSecondsBetweenSpawn);
-            Debug.Log(gameObject.name + _secondsBetweenSpawn);
 
-            int spawnPointNumber = Random.Range(0, _spawnPoints.Length);
-            SetEnemy(enemy, _spawnPoints[spawnPointNumber].transform.position);
+            Spawn(@object);
         }
     }
 
-    private void SetEnemy(GameObject enemy, Vector2 spawnPoint)
+    protected virtual void Spawn(GameObject @object)
     {
-        enemy.SetActive(true);
-        enemy.transform.position = spawnPoint;
+        int spawnPointNumber = Random.Range(0, _spawnPoints.Length);
+        SetEnemy(@object, _spawnPoints[spawnPointNumber].transform.position);
+
+    }
+
+    protected void SetEnemy(GameObject @object, Vector2 spawnPoint)
+    {
+        @object.SetActive(true);
+        @object.transform.position = spawnPoint;
     }
 }

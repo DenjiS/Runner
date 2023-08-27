@@ -1,18 +1,17 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if (collision.TryGetComponent(out Enemy enemy))
+        {
+            enemy.gameObject.SetActive(false);
+            gameObject.SetActive(false);
+        }
+        else if (collision.TryGetComponent(out Destroyer destroyer))
+        {
+            gameObject.SetActive(false);
+        }
     }
 }

@@ -8,15 +8,14 @@ public abstract class Pickable : MonoBehaviour
         if (collision.TryGetComponent(out Player player))
         {
             Interact(player);
+            gameObject.SetActive(false);
+        }
+        else if (collision.TryGetComponent(out Destroyer destroyer))
+        {
+            gameObject.SetActive(false);
         }
 
-        Die();
     }
 
     protected abstract void Interact(Player player);
-
-    private void Die()
-    {
-        gameObject.SetActive(false);
-    }
 }
