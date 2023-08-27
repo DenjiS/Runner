@@ -1,11 +1,14 @@
 using UnityEngine;
 
+[RequireComponent(typeof(AudioSource))]
 public class BulletSpawner : Spawner
 {
-    [SerializeField] SpawnPoint _spawnPoint;
+    [SerializeField] private SpawnPoint _spawnPoint;
+    [SerializeField] private AudioSource _shotSound;
 
-    protected override void Spawn(GameObject @object)
+    protected override void Spawn(GameObject bullet)
     {
-        SetEnemy(@object, _spawnPoint.transform.position);
+        SetEnemy(bullet, _spawnPoint.transform.position);
+        _shotSound.Play();
     }
 }

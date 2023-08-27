@@ -44,16 +44,15 @@ public class Spawner : ObjectPool
         }
     }
 
-    protected virtual void Spawn(GameObject @object)
-    {
-        int spawnPointNumber = Random.Range(0, _spawnPoints.Length);
-        SetEnemy(@object, _spawnPoints[spawnPointNumber].transform.position);
-
-    }
-
     protected void SetEnemy(GameObject @object, Vector2 spawnPoint)
     {
         @object.SetActive(true);
         @object.transform.position = spawnPoint;
+    }
+
+    protected virtual void Spawn(GameObject @object)
+    {
+        int spawnPointNumber = Random.Range(0, _spawnPoints.Length);
+        SetEnemy(@object, _spawnPoints[spawnPointNumber].transform.position);
     }
 }
