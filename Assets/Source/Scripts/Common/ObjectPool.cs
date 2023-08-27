@@ -7,7 +7,7 @@ public class ObjectPool : MonoBehaviour
     [SerializeField] private int _perObjectCapacity;
     [SerializeField] private Transform _container;
 
-    private List<GameObject> _pool = new();
+    private readonly List<GameObject> _pool = new();
 
     protected void Initialize(GameObject prefab)
     {

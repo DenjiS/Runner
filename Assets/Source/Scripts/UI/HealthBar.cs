@@ -6,7 +6,7 @@ public class HealthBar : MonoBehaviour
     [SerializeField] private Player _player;
     [SerializeField] private HeartUI _heartTemplate;
 
-    private List<HeartUI> _hearts = new();
+    private readonly List<HeartUI> _hearts = new();
 
     private void OnEnable()
     {
