@@ -6,6 +6,6 @@ public class StraightMover : MonoBehaviour
     
     private void Update()
     {
-        transform.Translate(Vector2.left * _speed * Time.deltaTime);
+        transform.Translate(Vector2.left * _speed * Time.deltaTime, Space.World);
     }
 }

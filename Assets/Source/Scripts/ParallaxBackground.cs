@@ -9,7 +9,7 @@ public class ParallaxBackground : MonoBehaviour
     private RawImage _image;
     private float _imageUVPositionX;
 
-    private void Start()
+    private void Awake()
     {
         _image = GetComponent<RawImage>();
     }

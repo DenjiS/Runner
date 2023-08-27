@@ -10,7 +10,7 @@ public class Spawner : ObjectPool
     private float _secondsBetweenSpawn;
     private float _elapsedTime = 0;
 
-    private void Start()
+    private void Awake()
     {
         Initialize(_templates);
 

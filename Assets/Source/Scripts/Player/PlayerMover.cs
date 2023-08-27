@@ -10,7 +10,7 @@ public class PlayerMover : MonoBehaviour
 
     private Vector3 _targetPosition;
 
-    private void Start()
+    private void Awake()
     {
         _targetPosition = transform.position;
     }

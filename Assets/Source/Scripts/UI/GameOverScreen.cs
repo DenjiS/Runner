@@ -13,7 +13,7 @@ public class GameOverScreen : MonoBehaviour
 
     private CanvasGroup _gameOverGroup;
 
-    private void Start()
+    private void Awake()
     {
         _gameOverGroup = GetComponent<CanvasGroup>();
 
