@@ -4,31 +4,22 @@ using UnityEngine;
 
 public class ObjectPool : MonoBehaviour
 {
-    [SerializeField] private int _perObjectCapacity;
+    [SerializeField] private GameObject[] _templates;
     [SerializeField] private Transform _container;
+    [SerializeField][Min(1)] private int _capacity;
 
     private readonly List<GameObject> _pool = new();
 
-    protected void Initialize(GameObject prefab)
+    protected virtual void Awake()
     {
-        for (int i = 0; i < _perObjectCapacity; i++)
+        if (_templates.Any())
         {
-            GameObject spawned = Instantiate(prefab, _container.transform);
-            spawned.SetActive(false);
-
-            _pool.Add(spawned);
-        }
-    }
-
-    protected void Initialize(GameObject[] prefabs)
-    {
-        foreach (GameObject prefab in prefabs)
-        {
-            for (int i = 0; i < _perObjectCapacity; i++)
+            for (int i = 0; i < _capacity; i++)
             {
-                GameObject spawned = Instantiate(prefab, _container.transform);
+                int instanceNumner = i / _capacity;
+                GameObject spawned = Instantiate(_templates[instanceNumner], _container.transform);
+                
                 spawned.SetActive(false);
-
                 _pool.Add(spawned);
             }
         }
