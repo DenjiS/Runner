@@ -12,12 +12,14 @@ public class ObjectPool : MonoBehaviour
 
     protected virtual void Awake()
     {
-        if (_templates.Any())
+        int templatesCount = _templates.Length;
+
+        if (templatesCount != 0)
         {
             for (int i = 0; i < _capacity; i++)
             {
-                int instanceNumner = i / _capacity;
-                GameObject spawned = Instantiate(_templates[instanceNumner], _container.transform);
+                int templatesNumner = i % templatesCount;
+                GameObject spawned = Instantiate(_templates[templatesNumner], _container.transform);
                 
                 spawned.SetActive(false);
                 _pool.Add(spawned);
