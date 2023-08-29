@@ -5,15 +5,15 @@ using UnityEngine.UI;
 [RequireComponent(typeof(CanvasGroup))]
 public class GameOverScreen : MonoBehaviour
 {
-    [SerializeField][Range(0, 1)] private float _backgroundAlpha;
-
     [SerializeField] private Button _restartButton;
     [SerializeField] private Button _exitButton;
     [SerializeField] private Player _player;
 
+    [SerializeField][Range(0, 1)] private float _backgroundAlpha;
+
     private CanvasGroup _gameOverGroup;
 
-    private void Start()
+    private void Awake()
     {
         _gameOverGroup = GetComponent<CanvasGroup>();
 
@@ -45,6 +45,7 @@ public class GameOverScreen : MonoBehaviour
 
     private void OnRestartButtonClick()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene(0);
     }
 

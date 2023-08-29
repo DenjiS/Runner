@@ -10,7 +10,7 @@ public class PlayerMover : MonoBehaviour
 
     private Vector3 _targetPosition;
 
-    private void Start()
+    private void Awake()
     {
         _targetPosition = transform.position;
     }
@@ -19,7 +19,10 @@ public class PlayerMover : MonoBehaviour
     {
         if (transform.position != _targetPosition)
         {
-            transform.position = Vector2.MoveTowards(transform.position, _targetPosition, _moveSpeed * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(
+                transform.position,
+                _targetPosition,
+                _moveSpeed * Time.deltaTime);
         }
     }
 

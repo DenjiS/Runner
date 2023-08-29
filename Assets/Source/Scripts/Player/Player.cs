@@ -13,9 +13,15 @@ public class Player : MonoBehaviour
         HealthChanged?.Invoke(_health);
     }
 
+    public void ApplyHealth(int health)
+    {
+        _health += Mathf.Clamp(health, 0, int.MaxValue);
+        HealthChanged?.Invoke(_health);
+    }
+
     public void ApplyDamage(int damage)
     {
-        _health -= damage;
+        _health -= Mathf.Clamp(damage, 0, int.MaxValue);
         HealthChanged?.Invoke(_health);
 
         if (_health <= 0)

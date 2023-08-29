@@ -9,10 +9,9 @@ public class ParallaxBackground : MonoBehaviour
     private RawImage _image;
     private float _imageUVPositionX;
 
-    private void Start()
+    private void Awake()
     {
         _image = GetComponent<RawImage>();
-        Debug.Log(_image.name);
     }
 
     private void Update()
@@ -23,7 +22,5 @@ public class ParallaxBackground : MonoBehaviour
             _image.uvRect.y,
             _image.uvRect.width,
             _image.uvRect.height);
-
-        Debug.Log(_imageUVPositionX);
     }
 }
