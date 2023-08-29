@@ -36,7 +36,7 @@ public class Spawner : ObjectPool
         _spawning = null;
     }
 
-    protected virtual void SetObject(GameObject @object)
+    protected virtual void Spawn(GameObject @object)
     {
         int spawnPointNumber = Random.Range(0, _spawnPoints.Length);
         Vector2 spawnPoint = _spawnPoints[spawnPointNumber].transform.position;
@@ -51,7 +51,7 @@ public class Spawner : ObjectPool
         {
             if (TryGetRandomObject(out GameObject @object))
             {
-                SetObject(@object);
+                Spawn(@object);
             }
 
             float delay = Random.Range(_minSpawnDelay, _maxSpawnDelay);

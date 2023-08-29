@@ -11,9 +11,9 @@ public class SpawnerWithSound : Spawner
         base.Awake();
     }
 
-    protected override void SetObject(GameObject @object)
+    protected override void Spawn(GameObject @object)
     {
         _shotSound.Play();
-        base.SetObject(@object);
+        base.Spawn(@object);
     }
 }
