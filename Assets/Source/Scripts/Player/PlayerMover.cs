@@ -19,7 +19,10 @@ public class PlayerMover : MonoBehaviour
     {
         if (transform.position != _targetPosition)
         {
-            transform.position = Vector2.MoveTowards(transform.position, _targetPosition, _moveSpeed * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(
+                transform.position,
+                _targetPosition,
+                _moveSpeed * Time.deltaTime);
         }
     }
 
