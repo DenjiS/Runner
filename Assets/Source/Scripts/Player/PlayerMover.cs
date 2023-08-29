@@ -28,7 +28,9 @@ public class PlayerMover : MonoBehaviour
 
     private void SetNextPosition(float speed)
     {
-        _targetPosition = new Vector2(_targetPosition.x, _targetPosition.y + speed * Time.deltaTime);
+        _targetPosition = new Vector2(
+            _targetPosition.x,
+            _targetPosition.y + speed * Time.deltaTime);
     }
 
     public void TryMoveUp()
